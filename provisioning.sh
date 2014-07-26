@@ -30,9 +30,6 @@ apt-get install -y nginx
 cp /vagrant/nginx-default.conf /etc/nginx/sites-available/default
 /etc/init.d/nginx restart
 
-#
-# Link candy and plugins for serving by nginx
-#
-ln -fs /vagrant/candy /usr/share/nginx/www/candy
-ln -fs /vagrant/candy-plugins /usr/share/nginx/www/candy-plugins
-ln -fs /vagrant/candy-index.html /usr/share/nginx/www/index.html
+ln -fs /vagrant/candy /usr/share/nginx/html/candy
+ln -fs /vagrant/candy-plugins /usr/share/nginx/html/candy-plugins
+ln -fs /vagrant/candy-index.html /usr/share/nginx/html/index.html
