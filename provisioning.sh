@@ -33,3 +33,12 @@ cp /vagrant/nginx-default.conf /etc/nginx/sites-available/default
 ln -fs /vagrant/candy /usr/share/nginx/html/candy
 ln -fs /vagrant/candy-plugins /usr/share/nginx/html/candy-plugins
 ln -fs /vagrant/candy-index.html /usr/share/nginx/html/index.html
+
+#
+# Candy development dependencies
+#
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install -y nodejs
+
+npm install -g grunt-cli
