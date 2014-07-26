@@ -20,7 +20,7 @@ apt-get install -y liblua5.1-bitop prosody lua-event
 # Link candy folders
 ln -fs /vagrant/candy /usr/share/nginx/www/candy
 ln -fs /vagrant/candy-plugins /usr/share/nginx/www/candy-plugins
-cp /vagrant/candy-index.html /usr/share/nginx/www/index.html
+ln -fs /vagrant/candy-index.html /usr/share/nginx/www/index.html
 
 # Prosody Websockets module installation
 wget -O /usr/lib/prosody/modules/mod_websocket.lua http://prosody-modules.googlecode.com/hg/mod_websocket/mod_websocket.lua
