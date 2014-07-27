@@ -8,6 +8,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty64"
   config.vm.network :forwarded_port, guest: 80, host: 8080
   config.vm.network :forwarded_port, guest: 5280, host: 5280
+  config.vm.network :forwarded_port, guest: 4444, host: 4444
+  config.vm.network :private_network, ip: '192.168.88.4'
+
   config.vm.provision :shell, :path => "provisioning.sh"
 
   config.vm.provider "virtualbox" do |v|

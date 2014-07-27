@@ -41,4 +41,20 @@ sudo add-apt-repository ppa:chris-lea/node.js
 sudo apt-get update
 sudo apt-get install -y nodejs
 
-npm install -g grunt-cli
+cd /vagrant/candy
+npm install -g
+
+#
+# Selenium & PhantomJS for testing
+#
+apt-get install -y openjdk-7-jre
+mkdir /usr/lib/selenium/
+cd /usr/lib/selenium/
+wget http://selenium-release.storage.googleapis.com/2.42/selenium-server-standalone-2.42.2.jar
+mkdir -p /var/log/selenium/
+chmod a+w /var/log/selenium/
+cp /vagrant/selenium.init.sh /etc/init.d/selenium
+chmod 755 /etc/init.d/selenium
+/etc/init.d/selenium start
+update-rc.d selenium defaults
+apt-get install -y phantomjs
