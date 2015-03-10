@@ -39,10 +39,16 @@ ln -fs /vagrant/candy-index.html /usr/share/nginx/html/index.html
 #
 sudo add-apt-repository ppa:chris-lea/node.js
 sudo apt-get update
-sudo apt-get install -y nodejs
+sudo apt-get install -y nodejs git
+npm install -g grunt-cli
+npm install -g bower
+
+cd /vagrant
+su -u vagrant npm install
+su -u vagrant bower install
 
 cd /vagrant/candy
-npm install -g
+grunt build
 
 #
 # Selenium & PhantomJS for testing
