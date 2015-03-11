@@ -15,9 +15,6 @@ apt-get update
 
 apt-get install -y liblua5.1-bitop prosody lua-event
 
-# Install Websockets module
-wget -O /usr/lib/prosody/modules/mod_websocket.lua http://prosody-modules.googlecode.com/hg/mod_websocket/mod_websocket.lua
-
 # Place config
 cp /vagrant/prosody.cfg.lua /etc/prosody/prosody.cfg.lua
 
@@ -39,10 +36,16 @@ ln -fs /vagrant/candy-index.html /usr/share/nginx/html/index.html
 #
 sudo add-apt-repository ppa:chris-lea/node.js
 sudo apt-get update
-sudo apt-get install -y nodejs
+sudo apt-get install -y nodejs git
+npm install -g grunt-cli
+npm install -g bower
+
+cd /vagrant
+su -u vagrant npm install
+su -u vagrant bower install
 
 cd /vagrant/candy
-npm install -g
+grunt build
 
 #
 # Selenium & PhantomJS for testing
