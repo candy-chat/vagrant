@@ -15,9 +15,6 @@ apt-get update
 
 apt-get install -y liblua5.1-bitop prosody lua-event
 
-# Install Websockets module
-wget -O /usr/lib/prosody/modules/mod_websocket.lua http://prosody-modules.googlecode.com/hg/mod_websocket/mod_websocket.lua
-
 # Place config
 cp /vagrant/prosody.cfg.lua /etc/prosody/prosody.cfg.lua
 
